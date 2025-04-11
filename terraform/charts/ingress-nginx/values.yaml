@@ -8,6 +8,12 @@ controller:
     enable-rewrite-log: "true"
     compute-full-forwarded-for: "true"
     custom-http-errors: ""
+    enable-cors: "true"
+    cors-allow-origin: "*"
+    cors-allow-methods: "PUT, GET, POST, OPTIONS, DELETE"
+    cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,x-user-id,x-user-email"
+    cors-expose-headers: "Content-Length,Content-Range"
+    cors-allow-credentials: "true"
 
   service:
     type: NodePort
@@ -40,3 +46,7 @@ controller:
 
   addHeaders:
     X-Health-Check: "OK"
+    Access-Control-Allow-Origin: "*"
+    Access-Control-Allow-Methods: "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers: "Content-Type, Authorization, x-user-id, x-user-email"
+    Access-Control-Max-Age: "86400"
